@@ -1,0 +1,377 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #e74c3c;
+    --primary-dark: #c0392b;
+    --secondary-color: #3498db;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --gray-color: #95a5a6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Header Styles */
+.app-header {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.connection-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.connection-online {
+    background-color: var(--success-color);
+}
+
+.connection-offline {
+    background-color: var(--gray-color);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+section {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Alert Section */
+.alert-button {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.alert-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.alerts-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.alert-item {
+    background-color: #ffeaea;
+    border-left: 4px solid var(--danger-color);
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.alert-item.medical {
+    border-left-color: #e74c3c;
+    background-color: #ffeaea;
+}
+
+.alert-item.security {
+    border-left-color: #f39c12;
+    background-color: #fff3e0;
+}
+
+.alert-item.resource {
+    border-left-color: #3498db;
+    background-color: #e3f2fd;
+}
+
+.alert-item.evacuation {
+    border-left-color: #9b59b6;
+    background-color: #f3e5f5;
+}
+
+.alert-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.alert-time {
+    font-size: 0.8rem;
+    color: var(--gray-color);
+}
+
+/* Communication Section */
+.message-input {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.message-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.message-input button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.message-input button:hover {
+    background-color: #2980b9;
+}
+
+.messages-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.message-item {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.message-sender {
+    font-weight: 600;
+}
+
+.message-time {
+    color: var(--gray-color);
+}
+
+/* Network Section */
+.network-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.network-button {
+    background-color: var(--dark-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.network-button:hover {
+    background-color: #1a252f;
+}
+
+.devices-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+}
+
+.device-item {
+    background-color: #e8f4fd;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.device-item.connected {
+    background-color: #e8f6ef;
+    border-color: var(--success-color);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.modal h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.modal select, .modal textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.modal textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.modal-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#cancel-alert {
+    background-color: var(--gray-color);
+    color: white;
+}
+
+#cancel-alert:hover {
+    background-color: #7f8c8d;
+}
+
+/* Footer */
+.app-footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-container {
+        box-shadow: none;
+    }
+    
+    .main-content {
+        padding: 0.5rem;
+    }
+    
+    section {
+        padding: 1rem;
+    }
+    
+    .network-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .devices-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .devices-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        padding: 1rem;
+    }
+}
